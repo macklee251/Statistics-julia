@@ -106,14 +106,23 @@ p_line = Plots.plot(t, observations,
 			  title = "Plots/GR Default (Line) Plot",
 			  legend = false)
 
+# ╔═╡ d861d36c-265e-400f-b1ec-3668f6bd72de
+avg = mean(observations)
+
+# ╔═╡ 44d175e2-4029-4f20-b383-687543f8b362
+stdev = std(observations)
+
 # ╔═╡ d78b68d7-08d0-4fd9-bdb9-c6a702d72842
 p_scatter =  Plots.scatter(t, observations, 
 			  xlabel="Time",
 			  ylabel="Observations",
 			  title = "Plots/GR Default (Line) Plot",
-			  legend = false)
+			  ltitle = "Plots/GR Linear Regression",
+			  legend = false,
+			  color = :dodgerblue),
+hline!([avg - stdev, avg, avg + stdev])
 
-# ╔═╡ d861d36c-265e-400f-b1ec-3668f6bd72de
+# ╔═╡ 53f4eca1-726e-4388-9b9a-6dbe9ac8689d
 
 
 # ╔═╡ 0b549c1c-5bae-4f78-9d04-47062183c9f7
@@ -137,6 +146,8 @@ p_scatter =  Plots.scatter(t, observations,
 # ╠═0c26c989-81a5-461f-84a2-b2aa82fc4fbb
 # ╠═89de134c-334a-4020-b10f-b7c4d549441d
 # ╠═0cf66b04-c2a1-42ec-8b66-097889ce721a
-# ╠═d78b68d7-08d0-4fd9-bdb9-c6a702d72842
 # ╠═d861d36c-265e-400f-b1ec-3668f6bd72de
+# ╠═44d175e2-4029-4f20-b383-687543f8b362
+# ╠═d78b68d7-08d0-4fd9-bdb9-c6a702d72842
+# ╠═53f4eca1-726e-4388-9b9a-6dbe9ac8689d
 # ╠═0b549c1c-5bae-4f78-9d04-47062183c9f7
